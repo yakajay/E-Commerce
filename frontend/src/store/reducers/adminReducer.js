@@ -9,7 +9,7 @@ export const adminReducer = (state = initialState, action) => {
                 ...state,
                 analytics: action.payload,
             };
-            
+
         default:
             return state;
     }

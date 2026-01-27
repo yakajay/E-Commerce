@@ -33,7 +33,7 @@ export const productReducer = (state = initialState, action) => {
                     lastPage: action.lastPage,
                 },
             };
-    
+
         case "FETCH_CATEGORIES":
             return {
                 ...state,
@@ -47,8 +47,8 @@ export const productReducer = (state = initialState, action) => {
                     lastPage: action.lastPage,
                 },
             };
-        
-    
+
+
         default:
             return state;
     }
