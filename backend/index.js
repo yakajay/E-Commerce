@@ -11,7 +11,7 @@ app.use(cors())
 
 mongoose.connect(process.env.mongouri)
 .then(() => {
-    console.log("Db Connection Success");
+    console.log("Db Connected Successfully");
     
 })
 
