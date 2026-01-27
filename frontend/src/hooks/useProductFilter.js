@@ -19,7 +19,7 @@ const useProductFilter = () => {
         const sortOrder = searchParams.get("sortby") || "asc";
         const categoryParams = searchParams.get("category") || null;
         const keyword = searchParams.get("keyword") || null;
-        params.set("sortBy","price");
+        params.set("sortBy", "price");
         params.set("sortOrder", sortOrder);
 
         if (categoryParams) {
@@ -32,7 +32,7 @@ const useProductFilter = () => {
 
         const queryString = params.toString();
         console.log("QUERY STRING", queryString);
-        
+
         dispatch(fetchProducts(queryString));
 
     }, [dispatch, searchParams]);
