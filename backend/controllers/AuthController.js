@@ -13,6 +13,7 @@ exports.register = async (req, res) => {
         const newUser = await Auth.create({
             username, email, password: hashPassword
         })
+        res.json(newUser)
     } catch (error) {
         console.log(error);
     }
