@@ -4,6 +4,7 @@ const dotenv = require("dotenv")
 const cors = require("cors")
 const mongoose = require("mongoose")
 const router = require("./routes/userRoutes")
+const authRouter = require("./routes/AuthRoutes")
 
 dotenv.config()
 app.use(express.json())
@@ -16,6 +17,7 @@ mongoose.connect(process.env.mongouri)
 })
 
 app.use("/api", router)
+app.use("/auth", authRouter)
 
 app.listen("5103", () => {
     console.log("Server Connecteds");
