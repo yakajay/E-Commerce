@@ -1,21 +1,19 @@
-const jwt = require("jsonwebtoken")
-const env = require("dotenv")
+const dotenv = require("dotenv")
+const jwt = require(jsonwebtoken)
 
-env.config()
+dotenv.config()
 
 exports.authMiddleWare = (req, res, next) => {
     try {
-        const headersData = Auth.headers.authorization
-        if (!headersData) {
+        const headData = Auth.headers.authorization
+        if (!headData) {
             return res.status(401).json({MSG: "Invalid Token"})
         }
-        const tokenData = headersData.split(" ")
-        const decodedData = jwt.verify(tokenData[1], process.env.SECRET_JWT)
-        req.id = decodedData.id
+        const tokenData = headData.split(" ")
+        const deocdeData = jwt.verify(tokenData[1], process.env.SECRET_JWT)
+        req.id = deocdeData.id
         next()
     } catch (error) {
-        console.log(
-            res.status(500).json({MSG: "Error with Token"})
-        );
+        return res.status(500).json({MSG: "Token Error"})
     }
 }
